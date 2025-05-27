@@ -1,6 +1,6 @@
 package it.eneaminelli.boardgame;
 
-public class Board {
+public class Board_Legacy {
     private int width, height;
 
     public int getWidth() {
@@ -49,7 +49,7 @@ public class Board {
     
     
     public static void main(String[] args) {
-        Board board = new Board();
+        Board_Legacy board = new Board_Legacy();
         int[][] boardTest = board.createBoard(6, 5);
         board.printBoard(boardTest);
     }
