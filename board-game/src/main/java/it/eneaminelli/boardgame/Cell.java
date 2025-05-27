@@ -12,37 +12,5 @@ package it.eneaminelli.boardgame;
 // - (Optional) Add methods like choosePos(x, y) to interact with specific Cells
 
 public class Cell {
-    int posX, posY;
-
-    public Cell() {
-        posX = 0;
-        posY = 0;
-    }
-
-    @Override
-    public String toString() {
-        String printString;
-        printString = "|" + posX + ", " + posY + "|";
-
-        return printString;
-    }
-
-    public int getPosX() {
-        return posX;
-    }
-
-    public void setPosX(int posX) {
-        this.posX = posX;
-    }
-
-    public int getPosY() {
-        return posY;
-    }
-
-    public void setPosY(int posY) {
-        this.posY = posY;
-    }
-
-    
     
 }
