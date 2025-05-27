@@ -18,6 +18,8 @@ public class Cell {
     private Cell(CellBuilder builder) {
         // Assigns the cellType from the builder to the Cell
         this.cellType = builder.cellType;
+        this.posX = builder.posX;
+        this.posY = builder.posY;
     }
 
     public String getCellType() {
