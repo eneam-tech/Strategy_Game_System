@@ -1,5 +1,7 @@
 package it.eneaminelli.boardgame;
 
+import it.eneaminelli.boardgame.units.BaseUnit;
+
 /**
  * Represents the game board, composed of a grid of {@link Cell} objects.
  */
@@ -8,6 +10,7 @@ public class Board {
     private int widthX;
     private int heightY;
     private Cell[][] gameBoard;
+    private BaseUnit unit;
 
     /**
      * Constructs a new Board with the given name, width, and height.
@@ -74,18 +77,6 @@ public class Board {
      */
     public String printCell(int posX, int posY) {
         return gameBoard[posX][posY].toString();
-    }
-
-    /**
-     * Main method for testing the Board class.
-     *
-     * @param args Command line arguments (not used).
-     */
-    public static void main(String[] args) {
-        Board testBoard = new Board("Test", 3, 3);
-        System.out.println(testBoard.printBoard());
-        System.out.println("\n\nCoordinates are 1, 1:");
-        System.out.println(testBoard.printCell(1, 1));
     }
 
 }
