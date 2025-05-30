@@ -1,9 +1,16 @@
 package it.eneaminelli.boardgame;
+
+import it.eneaminelli.boardgame.managers.BoardManager;
+import it.eneaminelli.boardgame.units.BaseUnit;
+import it.eneaminelli.boardgame.units.RangedUnit;
+
 public class App {
     public static void main(String[] args) {
-        Board testBoard = new Board("Test", 3, 3);
-        System.out.println(testBoard.printBoard());
-        System.out.println("\n\nCoordinates are 1, 1:");
-        System.out.println(testBoard.printCell(1, 1));
+        BoardManager boardManager = new BoardManager();
+        System.out.println("This is the gameboard: " + boardManager.getGameBoard().printBoard());
+        BaseUnit testUnit = boardManager.spawnUnit(new RangedUnit());
+        System.out.println("Unit name is " + testUnit.getUnitName() + " and is in coordinates:\nx: " + testUnit.getPosition().getPosX() + "\ny: " + testUnit.getPosition().getPosY());
+        ;
+        
     }
 }

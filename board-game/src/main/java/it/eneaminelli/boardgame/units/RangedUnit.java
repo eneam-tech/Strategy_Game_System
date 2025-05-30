@@ -14,6 +14,7 @@ public class RangedUnit extends BaseUnit {
      */
     public RangedUnit() {
         super(new RangedAttack());
+        setUnitName("Ranged Unit");
     }
 
     /**
@@ -22,10 +23,7 @@ public class RangedUnit extends BaseUnit {
      *
      */
     public static void main(String[] args) {
-        // Create an instance of RangedUnit
-        RangedUnit testUnit = new RangedUnit();
 
-        // Simulate an attack with 50 damage
-        testUnit.attack(50);
     }
+
 }

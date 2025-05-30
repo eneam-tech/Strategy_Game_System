@@ -1,12 +1,13 @@
-package it.eneaminelli.boardgame; 
+package it.eneaminelli.boardgame.board; 
+
+import it.eneaminelli.boardgame.units.BaseUnit;
 
 public class Cell {
     // Private field to store the type of the cell
     private String cellType;
     private int posX, posY;
     private boolean isOccupied = false;
-    //TODO: add unit variable
-
+    protected BaseUnit occupyingUnit;
 
     @Override
     public String toString() {
@@ -34,14 +35,22 @@ public class Cell {
         return posY;
     }
 
-    public boolean isIsOccupied() {
+    public boolean isOccupied() {
         return isOccupied;
     }
 
     public void setIsOccupied(boolean isOccupied) {
         this.isOccupied = isOccupied;
     }
-    
+
+    public void setOccupyingUnit(BaseUnit unit){
+        this.occupyingUnit = unit;
+    }
+
+    public BaseUnit getOccupyingUnit(){
+        System.out.println("There's a unit of name: " + occupyingUnit.getUnitName());
+        return occupyingUnit;
+    }
     // Static inner class that follows the Builder pattern to construct Cell objects
     public static class CellBuilder {
         private String cellType;

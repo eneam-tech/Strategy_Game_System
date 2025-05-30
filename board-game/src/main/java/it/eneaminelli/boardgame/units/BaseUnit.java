@@ -1,6 +1,6 @@
 package it.eneaminelli.boardgame.units;
 
-import it.eneaminelli.boardgame.Cell;
+import it.eneaminelli.boardgame.board.Cell;
 import it.eneaminelli.boardgame.units.attacks.AttackBehavior;
 
 /**
@@ -12,23 +12,26 @@ import it.eneaminelli.boardgame.units.attacks.AttackBehavior;
 public abstract class BaseUnit {
 
     /** Current health of the unit */
-    private int health;
-
+    private String unitName; 
+    
+    /** Current health of the unit */
+    private int health; 
+    
     /** Position of the unit on the board */
     private Cell position;
-
+    
     /** Number of movement points available to the unit */
     private int movementPoints;
-
+    
     /** Defensive capability of the unit */
     private int defenceValue;
-
+    
     /** Offensive capability of the unit */
     private int attackValue;
-
+    
     /** Strategy pattern for attack behavior */
     private AttackBehavior attackBehavior;
-
+    
     /**
      * Constructs a BaseUnit with a specific attack behavior.
      *
@@ -36,6 +39,15 @@ public abstract class BaseUnit {
      */
     public BaseUnit(AttackBehavior attackBehavior) {
         this.attackBehavior = attackBehavior;
+
+    }
+    
+    public String getUnitName() {
+        return unitName;
+    }
+    
+    public void setUnitName(String unitName) {
+        this.unitName = unitName;
     }
 
     /**
@@ -54,6 +66,12 @@ public abstract class BaseUnit {
      */
     public Cell getPosition() {
         return position;
+    }
+
+    public void setPosition(Cell position){
+        this.position = position;
+        position.setOccupyingUnit(this);
+        position.setIsOccupied(true);
     }
 
     /**

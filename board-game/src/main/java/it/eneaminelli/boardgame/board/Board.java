@@ -1,4 +1,4 @@
-package it.eneaminelli.boardgame;
+package it.eneaminelli.boardgame.board;
 
 import it.eneaminelli.boardgame.units.BaseUnit;
 
@@ -9,6 +9,14 @@ public class Board {
     private String boardName;
     private int widthX;
     private int heightY;
+    public int getWidthX() {
+        return widthX;
+    }
+
+    public int getHeightY() {
+        return heightY;
+    }
+
     private Cell[][] gameBoard;
     private BaseUnit unit;
 
@@ -75,8 +83,13 @@ public class Board {
      * @param posY The y-coordinate (row index) of the cell.
      * @return The String representation of the {@link Cell}.
      */
-    public String printCell(int posX, int posY) {
-        return gameBoard[posX][posY].toString();
+    public String printCell(Cell cell) {
+        return gameBoard[cell.getPosX()][cell.getPosY()].toString();
     }
+
+    public Cell[][] getGameBoard() {
+        return gameBoard;
+    }
+
 
 }
