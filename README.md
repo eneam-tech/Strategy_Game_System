@@ -11,17 +11,20 @@ A lightweight Java framework designed to simplify the creation of tile-based str
 - 🔁 **Ready for extension []** – Plug in new units, rules, and behaviors with minimal setup
 
 ## Current Structure
-├── App.java # Entry point to test the framework
-├── board
-│ ├── Board.java # Represents a 2D game board
-│ └── Cell.java # Represents a single tile on the board
-├── managers
-│ └── BoardManager.java # Handles board setup, cell tracking, and unit spawning
-├── units
-│ ├── BaseUnit.java # Abstract class for all unit types
-│ └── RangedUnit.java # Example subclass with specific behavior
-└── units.attacks
-└── AttackBehavior.java # Strategy interface for attack logic
+    ├── App.java # Entry point to test the framework
+    ├── board
+    │   ├── Board.java # Represents a 2D game board
+    │   │ 
+    │   └── Cell.java # Represents a single tile on the board
+    │
+    ├── managers
+    │└── BoardManager.java # Handles board setup, cell tracking, and unit spawning 
+    │
+    ├── units
+    │├── BaseUnit.java # Abstract class for all unit types 
+    │└── RangedUnit.java # Example subclass with specific behavior   
+    └── units.attacks
+    └── AttackBehavior.java # Strategy interface for attack logic
 
 
 ## Roadmap
